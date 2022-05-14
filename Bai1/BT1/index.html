@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>JavaScript Class</h2>
+
+    <p>Before:</p>
+    <p id="before"></p>
+
+    <p>After:</p>
+    <p id="after"></p>
+    <script>
+        const arr = [20, 25, 3, 101, 3];
+        document.getElementById("before").innerHTML = arr;
+        const tf = arr.some((value) => value > 100);
+        if (tf)
+            document.getElementById("after").innerHTML = "Trong mang co chua so lon hon 100";
+        else
+        document.getElementById("after").innerHTML = "Trong mang khong co so lon hon 100";
+    </script>
+</body>
+
+</html>

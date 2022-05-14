@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript Class</h2>
+
+    <p>Before:</p>
+    <p id="before"></p>
+
+    <p>After:</p>
+    <p id="after"></p>
+    <script>
+        const numbers = [13, 122, 12, 4, 17, 3, 44];
+        document.getElementById("before").innerHTML = numbers;
+        const even = numbers.filter(value => value%2===0);
+        const total = even.reduce((a,b)=>a+b);
+        document.getElementById("after").innerHTML = total;
+    </script>
+</body>
+</html>
