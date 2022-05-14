@@ -1,0 +1,15 @@
+<% for (const i of products){ %>
+    <h3>
+        <button type="submit" class="btn btn-primary">MODIFI</button>
+        <%= i.name %>
+    </h3>
+    <p>
+        <%= i._id %>
+    </p>
+    <p>
+        <%= i.price %>
+    </p>
+    <p>
+        <%= i.no %>
+    </p>
+    <% } %>
