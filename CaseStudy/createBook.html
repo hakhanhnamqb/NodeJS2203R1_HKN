@@ -13,36 +13,28 @@
         <h1>Create a new book</h1>
     </div>
     <form action="/book/create" method="POST" enctype="multipart/form-data">
-        <div class=”control-group”>
-            <div class="form-group floating-label-form-group controls">
-                <label>Name</label>
-                <input type="text" class="form-control" id="name" name="name">
-            </div>
-        </div>
-        <div class=”control-group”>
-            <div class="form-group floating-label-form-group controls">
-                <label>Price</label>
-                <input type="number" class="form-control" id="price" name="price">
-            </div>
-        </div>
-        <div class=”control-group”>
-            <div class="form-group floating-label-form-group controls">
-                <label>Quantity</label>
-                <input type="number" class="form-control" id="quantity" name="quantity">
-            </div>
-        </div>
-        <div class=”control-group”>
-            <div class="form-group floating-label-form-group controls">
-                <label>Author</label>
-                <input type="text" class="form-control" id="author" name="author">
-            </div>
-        </div>
-        <div class=”control-group”>
-            <div class="form-group floating-label-form-group controls">
-                <label>The remaining quantity</label>
-                <input type="text" class="form-control" id="remaining" name="remaining">
-            </div>
-        </div>
+        <table class=”control-group”>
+            <tr class="form-group floating-label-form-group controls">
+                <td><label>Name</label></td>
+                <td><input type="text" class="form-control" id="name" name="name"></td>
+            </tr>
+            <tr class="form-group floating-label-form-group controls">
+                <td><label>Price</label></td>
+                <td><input type="number" class="form-control" id="price" name="price"></td>
+            </tr>
+            <tr class="form-group floating-label-form-group controls">
+                <td><label>Library Name</label></td>
+                <td><input type="text" class="form-control" id="price" name="price"></td>
+            </tr>
+            <tr class="form-group floating-label-form-group controls">
+                <td><label>Quantity</label></td>
+                <td><input type="number" class="form-control" id="quantity" name="quantity"></td>
+            </tr>
+            <tr class="form-group floating-label-form-group controls">
+                <td><label>Author</label></td>
+                <td><input type="text" class="form-control" id="author" name="author"></td>
+            </tr>
+        </table>
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Register</button>
         </div>
