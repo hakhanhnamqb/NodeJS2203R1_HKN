@@ -10,33 +10,33 @@
 
 <body>
     <div class="page-heading">
-        <h1>Create a new book</h1>
+        <h1>Borrow a book</h1>
     </div>
-    <form action="/book/create" method="POST" enctype="multipart/form-data">
+    <form action="/borrowBook" method="POST" enctype="multipart/form-data">
         <table class=”control-group”>
             <tr class="form-group floating-label-form-group controls">
-                <td><label>Name</label></td>
-                <td><input type="text" class="form-control" id="name" name="name"></td>
+                <td><label>Student Name</label></td>
+                <td><input type="text" class="form-control" id="nameStudent" name="nameStudent"></td>
             </tr>
             <tr class="form-group floating-label-form-group controls">
-                <td><label>Price</label></td>
-                <td><input type="number" class="form-control" id="price" name="price"></td>
+                <td><label>Student ID</label></td>
+                <td><input type="number" class="form-control" id="studentID" name="studentID"></td>
             </tr>
             <tr class="form-group floating-label-form-group controls">
-                <td><label>Library Name</label></td>
+                <td><label>Book Name</label></td>
                 <td><input type="text" class="form-control" id="price" name="price"></td>
             </tr>
             <tr class="form-group floating-label-form-group controls">
-                <td><label>Quantity</label></td>
-                <td><input type="number" class="form-control" id="quantity" name="quantity"></td>
+                <td><label>Borrowing Date</label></td>
+                <td><input type="datetime" class="form-control" id="borrowDate" name="borrowDate"></td>
             </tr>
             <tr class="form-group floating-label-form-group controls">
-                <td><label>Author</label></td>
-                <td><input type="text" class="form-control" id="author" name="author"></td>
+                <td><label>Returning Date</label></td>
+                <td><input type="datetime" class="form-control" id="returnDate" name="returnDate"></td>
             </tr>
         </table>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn-primary">BORROWING</button>
         </div>
     </form>
 </body>

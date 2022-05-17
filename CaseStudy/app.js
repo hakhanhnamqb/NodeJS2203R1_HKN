@@ -18,6 +18,8 @@ const libraryRoute = require('./routes/libraryRoute');
 app.use('/library',libraryRoute);
 const bookRoute = require('./routes/bookRoute');
 app.use('/book',bookRoute);
+const borrowBookRoute = require('./routes/borrowBookRoute');
+app.use('/borrow',borrowBookRoute);
 
 app.listen(port, () => {
     console.log("Server running on port " + port);

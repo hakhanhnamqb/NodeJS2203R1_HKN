@@ -1,0 +1,42 @@
+<div class="page-heading">
+    <h1>Borrow a book</h1>
+</div>
+<form action="/borrowBook" method="POST" enctype="multipart/form-data">
+    <table class=”control-group”>
+        <tr class="form-group floating-label-form-group controls">
+            <td><label>Student Name</label></td>
+            <td><input type="text" class="form-control" id="nameStudent" name="nameStudent"></td>
+        </tr>
+        <tr class="form-group floating-label-form-group controls">
+            <td><label>Student ID</label></td>
+            <td><input type="number" class="form-control" id="studentID" name="studentID"></td>
+        </tr>
+        <tr class="form-group floating-label-form-group controls">
+            <td><label>Book Name</label></td>
+            <td>
+                <select class="bookID" data-style="btn-info" name="bookID">
+                    <optgroup label="Select Library">
+                        <% allBooks.forEach(function(book){ %>
+                        <option value="<%= book.id %>"><%= book.bookName %></option>
+                        <% }) %>
+                    </optgroup>
+                </select>
+              </td>
+        </tr>
+        <tr>
+            <td><label>Quantity Borrow</label></td>
+            <td><input type="number" class="form-control" id="quantity_borrow" name="quantity_borrow"></td>
+        </tr>
+        <tr class="form-group floating-label-form-group controls">
+            <td><label>Borrowing Date</label></td>
+            <td><input type="date" class="form-control" id="borrowDate" name="borrowDate"></td>
+        </tr>
+        <tr class="form-group floating-label-form-group controls">
+            <td><label>Returning Date</label></td>
+            <td><input type="date" class="form-control" id="returnDate" name="returnDate"></td>
+        </tr>
+    </table>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">BORROWING</button>
+    </div>
+</form>

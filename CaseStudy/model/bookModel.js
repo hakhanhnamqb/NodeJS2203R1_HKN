@@ -7,7 +7,9 @@ const bookSchema = new schema({
         type: schema.Types.ObjectId,
         ref: "libraryID"
     },
-    quantity: String,
+    quantity: Number,
+    quantity_borrow: Number,
+    quantity_remain: Number,
     author: String
 })
 const Book = mongoose.model('Book',bookSchema);
