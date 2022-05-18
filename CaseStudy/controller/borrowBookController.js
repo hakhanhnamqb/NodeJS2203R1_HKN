@@ -1,3 +1,4 @@
+const { now } = require('mongoose');
 const bookModel = require('../model/bookModel');
 const borrowBookModel = require('../model/borrowBokModel');
 exports.borrowBook = async (req, res, next) => {
@@ -29,8 +30,13 @@ exports.borrowBook = async (req, res, next) => {
 exports.returnBook = async (req, res, next) => {
     const borrowed = await borrowBookModel.find({ studentID: req.body.studentID, returnDate: null });
     // console.log(borrowed);
-    res.render('returnBook',{borrowed: borrowed});
-    await borrowBookModel.findOne({_id: id}).then({
-        
-    })
+    res.render('returnBook', { borrowed: borrowed });
+}
+exports.returnBookStudent = async (req, res, next) => {
+    console.log("returning");
+    let borrowbooks = await borrowBookModel.findOne({ _id: req.body.id });
+    if (borrowbooks) {
+        borrowbooks.returnDate = new Date();
+        await borrowbooks.save();
+    }
 }
