@@ -9,6 +9,7 @@ exports.borrowBook = async (req, res, next) => {
             nameStudent: req.body.nameStudent,
             studentID: req.body.studentID,
             bookID: req.body.bookID,
+            bookName: req.body.bookName,
             quantity_borrow: req.body.quantity_borrow,
             borrowDate: req.body.borrowDate,
             returnDate: null
@@ -33,10 +34,10 @@ exports.returnBook = async (req, res, next) => {
     res.render('returnBook', { borrowed: borrowed });
 }
 exports.returnBookStudent = async (req, res, next) => {
-    console.log("returning");
     let borrowbooks = await borrowBookModel.findOne({ _id: req.body.id });
     if (borrowbooks) {
         borrowbooks.returnDate = new Date();
         await borrowbooks.save();
+        res.render('returnBook');
     }
 }

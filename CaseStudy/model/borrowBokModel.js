@@ -7,6 +7,7 @@ const borrowBookSchema = new schema({
         type: schema.Types.ObjectId,
         ref: "bookID"
     },
+    bookName: String,
     quantity_borrow: Number,
     borrowDate: Date,
     returnDate: Date

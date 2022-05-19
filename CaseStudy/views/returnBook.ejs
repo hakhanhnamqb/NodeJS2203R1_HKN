@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link href="css/styles.css" rel="stylesheet" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script type="text/javascript">
         const returnbooks = async (id) => {
@@ -18,18 +19,31 @@
                     console.log(thrownError);
                 }
             })
+            location.reload();
         }
-
     </script>
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:3000/library/createLibrary">Create Library</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:3000/book/createBook">Create Book</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:3000/book/createBook">Create a Book</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:3000/borrow">Borrow Book</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:3000/borrow/searchStudentID">Return Book</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="page-heading">
         <h1>Borrow a book</h1>
     </div>
     <form action="/borrow/returnBook" method="POST" enctype="multipart/form-data">
         <% for (const borrow of borrowed){ %>
-            <table class=”control-group”>
+            <table class=”control-group” style="border: 5px black;">
                 <tr class="form-group floating-label-form-group controls">
                     <td><label>Student Name</label></td>
                     <td>
@@ -47,27 +61,33 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><label>Quantity Borrow</label></td>
+                    <td><label>Book Name</label></td>
                     <td>
+                        <p>
+                            <%= borrow.bookName %>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Quantity Borrow</label></td>
                     <td>
                         <p>
                             <%= borrow.quantity_borrow %>
                         </p>
                     </td>
-                    </td>
                 </tr>
                 <tr class="form-group floating-label-form-group controls">
                     <td><label>Borrow Date</label></td>
-                    <td>
                     <td>
                         <p>
                             <%= borrow.borrowDate %>
                         </p>
                     </td>
-                    </td>
                 </tr>
                 <tr>
-                    <button onclick="returnbooks('<%= borrow.id %>')">RETURNING</button>
+                    <td><button onclick="returnbooks('<%= borrow.id %>')">RETURNING</button></td>
+                    <td></td>
+                    
                     <!-- <button onclick="">DELETE</button> -->
                 </tr>
             </table>
