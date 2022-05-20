@@ -17,6 +17,21 @@ exports.addBook = async (req, res, next) => {
             res.json({ bookNew: bookNew });
         }
     } else {
-        res.json("Book " + req.body.bookName + " does exist");
+        let  message = "Book does exits!";
+        res.render("createBook", { message: message});
+        // res.redirect('/book/createBook',{ message: "Hello world!"});
+        // res.json("Book " + req.body.bookName + " does exist");
+    }
+}
+exports.deleteBook = async (req, res, next) => {
+    // console.log(req.body);
+    let findBook = await bookModel.findOne({_id: req.body.id});
+    if (findBook) {
+        await findBook.remove();
+        // await findBook.save();
+        // console.log(findBook, "find book");
+        const allBook = await bookModel.find();
+        res.render('listAllBook', { allBook: allBook });
+        // res.render('returnBook', { borrowed: borrowed });
     }
 }

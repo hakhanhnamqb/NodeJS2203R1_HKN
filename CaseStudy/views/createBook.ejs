@@ -2,8 +2,15 @@
 <html lang="en">
 
 <head>
-    <link href="css/styles.css" rel="stylesheet" />
-    
+    <!-- <link href="css/styles.css" rel="stylesheet" /> -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        let message = '<%= message %>';
+        console.log(message);
+        if (message != null) {
+            alert('error: ' + message);
+        }
+    </script>
 </head>
 
 <body>
@@ -11,11 +18,16 @@
         <div class="container px-4 px-lg-5">
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:3000/library/createLibrary">Create Library</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:3000/book/createBook">Create Book</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:3000/book/createBook">Create a Book</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:3000/borrow">Borrow Book</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:3000/borrow/searchStudentID">Return Book</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                            href="http://localhost:3000/library/createLibrary">Create Library</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                            href="http://localhost:3000/book/createBook">Create Book</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                            href="http://localhost:3000/book/listAllBook">List all Book</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                            href="http://localhost:3000/borrow">Borrow Book</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                            href="http://localhost:3000/borrow/searchStudentID">Return Book</a></li>
                 </ul>
             </div>
         </div>
@@ -61,7 +73,4 @@
             <button type="submit" class="btn btn-primary">Register</button>
         </div>
     </form>
-    <div class="form-group">
-        <button onclick="">List All Book</button>
-    </div>
 </body>
