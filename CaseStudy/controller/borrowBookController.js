@@ -34,10 +34,13 @@ exports.returnBook = async (req, res, next) => {
     res.render('returnBook', { borrowed: borrowed });
 }
 exports.returnBookStudent = async (req, res, next) => {
+    console.log(req.head);
     let borrowbooks = await borrowBookModel.findOne({ _id: req.body.id });
     if (borrowbooks) {
         borrowbooks.returnDate = new Date();
         await borrowbooks.save();
-        res.render('returnBook');
+        const borrowed = await borrowBookModel.find({ studentID: req.body.studentID, returnDate: null });
+        console.log(borrowed);
+        res.render('returnBook', { borrowed: borrowed });
     }
 }
