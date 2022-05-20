@@ -1,4 +1,5 @@
 const bookModel = require('../model/bookModel');
+const libraryModel = require('../model/libraryModel');
 exports.addBook = async (req, res, next) => {
     console.log(req.body);
     const books = await bookModel.findOne({ bookName: req.body.bookName });
@@ -14,11 +15,15 @@ exports.addBook = async (req, res, next) => {
         }
         const bookNew = await bookModel.create(bookData);
         if (bookNew) {
+            const libraris = await libraryModel.find();
+            const message = "Success!";
+            res.render("createBook", { libraris: libraris, message : message});
             res.json({ bookNew: bookNew });
         }
     } else {
-        let  message = "Book does exits!";
-        res.render("createBook", { message: message});
+        const libraris = await libraryModel.find();
+        const message = "Book " + req.body.bookName + " does exist";
+        res.render("createBook", { libraris: libraris, message : message});
         // res.redirect('/book/createBook',{ message: "Hello world!"});
         // res.json("Book " + req.body.bookName + " does exist");
     }
@@ -29,9 +34,9 @@ exports.deleteBook = async (req, res, next) => {
     if (findBook) {
         await findBook.remove();
         // await findBook.save();
-        // console.log(findBook, "find book");
-        const allBook = await bookModel.find();
-        res.render('listAllBook', { allBook: allBook });
+        res.json({status: 200, message: "delete success"})
+        // const allBook = await bookModel.find();
+        // res.render('listAllBook', { allBook: allBook });
         // res.render('returnBook', { borrowed: borrowed });
     }
 }

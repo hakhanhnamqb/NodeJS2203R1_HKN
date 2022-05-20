@@ -31,7 +31,7 @@
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:3000/library/createLibrary">Create Library</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:3000/book/createBook">Create Book</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:3000/book/createBook">Create a Book</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:3000/book/listAllBook">List all Book</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:3000/borrow">Borrow Book</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="http://localhost:3000/borrow/searchStudentID">Return Book</a></li>
                 </ul>
@@ -49,7 +49,7 @@
         <p>Borrow Date: <%= borrow.borrowDate %> </p>
         <button onclick="returnbooks('<%= borrow.id %>')">RETURNING</button>
     <% } %> -->
-    <form  method="POST" enctype="multipart/form-data">
+    <!-- <form  method="POST" enctype="multipart/form-data"> -->
         <% for (const borrow of borrowed){ %>
             <table class=”control-group” style="border: 5px black;">
                 <tr class="form-group floating-label-form-group controls">
@@ -95,5 +95,5 @@
             </table>
             <button onclick="returnbooks('<%= borrow.id, borrow.studentID %>')">RETURNING</button>
             <% } %>
-    </form>
+    <!-- </form> -->
 </body>

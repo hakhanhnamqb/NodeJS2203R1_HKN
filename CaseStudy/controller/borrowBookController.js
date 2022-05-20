@@ -39,8 +39,9 @@ exports.returnBookStudent = async (req, res, next) => {
     if (borrowbooks) {
         borrowbooks.returnDate = new Date();
         await borrowbooks.save();
-        const borrowed = await borrowBookModel.find({ studentID: req.body.studentID, returnDate: null });
-        console.log(borrowed);
-        res.render('returnBook', { borrowed: borrowed });
+        // const borrowed = await borrowBookModel.find({ studentID: req.body.studentID, returnDate: null });
+        // console.log(borrowed);
+        // res.render('returnBook', { borrowed: borrowed });
+        res.json({status: 200, message: "delete success"})
     }
 }

@@ -7,8 +7,10 @@ const bookModel = require('../model/bookModel');
 const bookController = require('../controller/bookController');
 route.get('/createBook', async (req, res) => {
     const libraris = await libraryModel.find();
-    console.log(libraris);
-    res.render('createBook', { libraris: libraris })
+    // console.log(libraris);
+    const message = "";
+    // console.log(message);
+    res.render('createBook', { libraris: libraris, message: message })
 });
 
 route.post('/createBook', upload.none(), bookController.addBook);
