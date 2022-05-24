@@ -7,10 +7,12 @@ const bookSchema = new schema({
         type: schema.Types.ObjectId,
         ref: "libraryID"
     },
+    libraryName: String,
     quantity: Number,
     quantity_borrow: Number,
     quantity_remain: Number,
-    author: String
+    author: String,
+    state: String
 })
 const Book = mongoose.model('Book',bookSchema);
 module.exports = Book;

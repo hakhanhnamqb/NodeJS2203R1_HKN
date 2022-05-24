@@ -10,7 +10,8 @@ const borrowBookSchema = new schema({
     bookName: String,
     quantity_borrow: Number,
     borrowDate: Date,
-    returnDate: Date
+    returnDate: Date,
+    state: String
 })
 const BorrowBook = mongoose.model('BorrowBook',borrowBookSchema);
 module.exports = BorrowBook;

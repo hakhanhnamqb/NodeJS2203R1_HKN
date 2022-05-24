@@ -2,7 +2,15 @@
 <html lang="en">
 
 <head>
-    <link href="css/styles.css" rel="stylesheet" />
+    <!-- <link href="css/styles.css" rel="stylesheet" /> -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        var message = '<%= message %>';          
+        if(message!="") 
+        {  
+          alert(message);
+        }
+    </script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
@@ -50,6 +58,16 @@
             <tr class="form-group floating-label-form-group controls">
                 <td><label>Borrowing Date</label></td>
                 <td><input type="date" class="form-control" id="borrowDate" name="borrowDate"></td>
+            </tr>
+            <tr class="form-group floating-label-form-group controls">
+                <td><label>State of the Book</label></td>
+                <td>
+                    <select name="state" id="state">
+                        <option value="New">New</option>
+                        <option value="Old">Old</option>
+                        <option value="Broken">Broken</option>
+                    </select>
+                </td>
             </tr>
         </table>
         <div class="form-group">

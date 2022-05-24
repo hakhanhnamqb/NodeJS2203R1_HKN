@@ -42,20 +42,14 @@
         </div>
     </nav>
     <% for (const book of allBook) { %>
-        <p>Book Name: <%= book.bookName %>
-        </p>
-        <p>Price: <%= book.price %>
-        </p>
-        <p>Library: <%= book.libraryID %>
-        </p>
-        <p>Quantity: <%= book.quantity %>
-        </p>
-        <p>Quantity Borrow: <%= book.quantity_borrow %>
-        </p>
-        <p>Quantity Remain: <%= book.quantity_remain %>
-        </p>
-        <p>Author: <%= book.author %>
-        </p>
+        <p>Book Name: <%= book.bookName %></p>
+        <p>Price: <%= book.price %></p>
+        <p>Library: <%= book.libraryID %></p>
+        <p>Quantity: <%= book.quantity %></p>
+        <p>Quantity Borrow: <%= book.quantity_borrow %></p>
+        <p>Quantity Remain: <%= book.quantity_remain %></p>
+        <p>Author: <%= book.author %></p>
+        <p>State of the Book: <%= book.state %></p>
         <button onclick="deleteBook('<%= book.id %>')">Delete</button>
         <% } %>
 </body>

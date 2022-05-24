@@ -9,7 +9,8 @@ const borrowBookController = require('../controller/borrowBookController');
 route.get('/', async (req, res) => {
     const allBooks = await bookModel.find();
     // console.log(allBooks);
-    res.render('borrowBook', { allBooks: allBooks })
+    const message = "";
+    res.render('borrowBook', { allBooks: allBooks, message: message })
 });
 route.post('/borrowBooks', upload.none(), borrowBookController.borrowBook);
 

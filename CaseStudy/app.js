@@ -14,6 +14,7 @@ db.on('err',(err)=>{
 
 app.set("view engine","ejs");
 app.set("views","./views");
+app.use(express.static('./views'));
 const libraryRoute = require('./routes/libraryRoute');
 app.use('/library',libraryRoute);
 const bookRoute = require('./routes/bookRoute');
